@@ -7,34 +7,34 @@
  */
 int main(void)
 {
-	int n;
+	int c, i, k, j;
 
-	int n1;
-
-	int t;
-
-	int o;
-
-	for (n = '0'; n <= '9'; n++)
+	for (c = 48; c <= 57; c++)
 	{
-		for (n1 = '0'; n1 <= '9'; n1++)
+		for (i = 48; i <= 57; i++)
 		{
-			for (t = n; t <= '9'; t++)
+			for (k = 48; k <= 57; k++)
 			{
-				for (o = n1 + 1; o <= '9'; o++)
+				for (j = 48; j <= 57; j++)
 				{
-					putchar(n);
-					putchar(n1);
-					putchar(' ');
-					putchar(t);
-					putchar(o);
-					if (!((n == '9' && n1 == '8') && (t == '9' && o == '9')))
+					if (((k + j) > (c + i) &&  k >= c) || c < k)
 					{
-						putchar(',');
+						putchar(c);
+						putchar(i);
 						putchar(' ');
+						putchar(k);
+						putchar(j);
+						if (c + i + k + j == 227 && c == 57)
+						{
+							break;
+						}
+						else
+						{
+							putchar(',');
+							putchar(' ');
+						}
 					}
 				}
-				o = '0';
 			}
 		}
 	}
