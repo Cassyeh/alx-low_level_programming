@@ -1,5 +1,6 @@
 #include "main.h"
 /**
+<<<<<<< HEAD
  */
 void print_times_table(int n){
 	int rows, columns, product;
@@ -9,6 +10,26 @@ void print_times_table(int n){
 			for (columns = 0; columns <= n; columns++){
 				product = (rows * columns);
 			if (columns == 0){
+=======
+ * print_times_table - prints the n times table, starting with 0
+ * @n: number of the times table
+ * don't print n greater than 15 or n less than 0
+ */
+
+void print_times_table(int n)
+{
+	int rows, columns, product;
+
+	if (n >= 0 && n <= 15)
+	{
+		for (rows = 0; rows <= n; rows++)
+		{
+		for (columns = 0; columns <= n; columns++)
+		{
+			product = (rows*columns);
+			if (columns == 0)
+			{
+>>>>>>> parent of 003a4a7... Print n times table Task
 			_putchar('0' + product);
 			}
 			else if (product <= 9){
