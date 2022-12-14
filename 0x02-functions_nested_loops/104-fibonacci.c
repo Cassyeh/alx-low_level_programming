@@ -1,17 +1,13 @@
 #include <stdio.h>
 
+/**
+* main - print first 98 Fibonacci numbers without using long long, malloc,
+* pointers, array/tables, or structures
+* Return: 0
+*/
 
-	/**
-	 * main - print first 98 Fibonacci numbers without using long long, malloc,
-	 *
-	 * Purpose - no hardcode
-	 *
-	 * Return:  (Success)
-	 */
-
-
-	int main(void)
-	{
+int main(void)
+{
 		unsigned long int i;
 		unsigned long int bef = 1;
 		unsigned long int aft = 2;
