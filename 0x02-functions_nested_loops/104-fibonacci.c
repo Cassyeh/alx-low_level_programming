@@ -2,7 +2,7 @@
 
 
 	/**
-	 * main - fibonacci <3
+	 * main - print first 98 Fibonacci numbers without using long long, malloc,
 	 *
 	 * Purpose - no hardcode
 	 *
@@ -10,7 +10,7 @@
 	 */
 
 
-	int main(void)
+	int main(void) /* function to use */ 
 	{
 		unsigned long int i;
 		unsigned long int bef = 1;
