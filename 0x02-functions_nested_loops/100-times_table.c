@@ -2,9 +2,7 @@
 /**
  * print_times_table - prints the n times table, starting with 0
  * @n: number of the times table
- * don't print n greater than 15 or n less than 0
  */
-
 void print_times_table(int n)
 {
 	int rows, columns, product;
@@ -15,7 +13,7 @@ void print_times_table(int n)
 		{
 		for (columns = 0; columns <= n; columns++)
 		{
-			product = (rows*columns);
+			product = (rows * columns);
 			if (columns == 0)
 			{
 			_putchar('0' + product);
