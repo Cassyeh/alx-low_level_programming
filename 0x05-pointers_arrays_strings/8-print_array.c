@@ -11,9 +11,9 @@
 
 void print_array(int *a, int n)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; i <= n - 1; i++)
+	while (a[i] != '\0' && i <= n - 1 && n > 0)
 	{
 		if (i != n - 1)
 		{
@@ -21,7 +21,9 @@ void print_array(int *a, int n)
 		}
 		else
 		{
-			printf("%d\n", a[i]);
+			printf("%d", a[i]);
 		}
+		i++;
 	}
+	printf("\n");
 }
