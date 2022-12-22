@@ -9,21 +9,21 @@
 
 char *_strcat(char *dest, char *src)
 {
-  int lengthofa;
-  int lengthofb;
-  
-  lengthofa = 0;
-  while (dest[lengthofa] != '\0')
-  {
-    lengthofa++;
-  }
-  lengthofb = 0;
-  while (src[lengthofb] != '\0')
-  {
-    dest[lengthofa] = src[lengthofb];
-    lengthofa++;
-    lengthofb++;
-  }
-  dest[lengthofa] = '\0';
-  return (dest);
+	int lengthofa;
+	int lengthofb;
+
+	lengthofa = 0;
+	while (dest[lengthofa] != '\0')
+	{
+		lengthofa++;
+	}
+	lengthofb = 0;
+	while (src[lengthofb] != '\0')
+	{
+		dest[lengthofa] = src[lengthofb];
+		lengthofa++;
+		lengthofb++;
+	}
+	dest[lengthofa] = '\0';
+	return (dest);
 }
