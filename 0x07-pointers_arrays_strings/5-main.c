@@ -20,7 +20,7 @@ int main(void)
 
 	    char *s = "hello, world";
 
-	        char *f = "world";
+	        char *f = "tworld";
 
 		    char *t;
 
