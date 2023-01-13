@@ -40,6 +40,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
-	_memset(array, 0, nmemb);
+	_memset(array, 0, nmemb * size);
 	return (array);
 }
