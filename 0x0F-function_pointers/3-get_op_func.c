@@ -24,7 +24,7 @@ int (*get_op_func(char *s))(int, int)
 	{
 		i++;
 	}
-	if (i == 6)
+	if (i >= 5)
 	{
 		return (NULL);
 	}
