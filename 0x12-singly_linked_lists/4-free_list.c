@@ -9,11 +9,14 @@ void free_list(list_t *head)
 {
 	list_t *tmp;
 
-	while (head)
+	if (head == NULL)
 	{
-		tmp = head->next;
-		free(head->str);
-		free(head);
-		head = tmp;
+		return;
+	}
+	while ((tmp = head) != NULL)
+	{
+		head = head->next;
+		free(tmp->str);
+		free(tmp);
 	}
 }

@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <string.h>
 
 /**
  * _strlen - find string length
@@ -29,6 +30,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (strdup(str) == NULL) /* check if malloc errored */
 		return (NULL);
 
+	tmp = *head;
 	new_node = malloc(sizeof(list_t)); /* malloc for new node */
 	if (new_node == NULL)
 		return (NULL);
