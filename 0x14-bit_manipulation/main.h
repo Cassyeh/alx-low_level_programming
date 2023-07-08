@@ -14,5 +14,6 @@ unsigned int num_digits(unsigned int num);
 unsigned int power(unsigned int a, unsigned int b);
 unsigned int _atoi(const char *s);
 unsigned long int powr(unsigned long int a, unsigned long int b);
+unsigned long int print_bin(unsigned long int n);
 
 #endif
