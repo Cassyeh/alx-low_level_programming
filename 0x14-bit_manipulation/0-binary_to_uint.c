@@ -71,7 +71,7 @@ unsigned int _atoi(const char *s)
 		len++;
 	while (i < len)
 	{
-		if (s[i] >= '0' && s[i] <= '9')
+		if (s[i] == '0' || s[i] == '1')
 		{
 			digit = s[i] - '0';
 			n = n * 10 + digit;
@@ -101,6 +101,10 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int i;
 	unsigned int k = digits - 1;
 
+	if (b == NULL)
+	{
+		return (0);
+	}
 	for (i = 0; i < digits; i++)
 	{
 		g = res / j;
