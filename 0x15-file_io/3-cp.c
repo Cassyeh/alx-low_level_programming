@@ -50,19 +50,17 @@ int main(int ac, char **av)
 	if (fd == -1)
 		errors(0, av[1], 98);
 	res = read(fd, buff, 1024);
-	if (res == -1)
-	{
-		close(fd);
-		errors(0, av[1], 98);
-	}
 	fd2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd2 == -1)
 		errors(0, av[2], 99);
-	written = write(fd2, buff, res);
-	if (written == -1)
+	while (res != 0)
 	{
-		close(fd2);
-		errors(0, av[2], 99);
+		if (res == -1)
+			errors(0, av[1], 98);
+		written = write(fd2, buff, res);
+		if (written == -1)
+			errors(0, av[2], 99);
+		res = read(fd, buff, 1024);
 	}
 	if (close(fd) == -1)
 		errors(fd, NULL, 100);
