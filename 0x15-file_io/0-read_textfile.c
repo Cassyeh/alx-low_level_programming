@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include <unistd.h>
 
 /**
@@ -24,29 +23,37 @@ int _putchar(char c)
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char c;
-	size_t i = 0;
-	FILE *fileptr = NULL;
+	char *buff;
+	ssize_t i;
+	ssize_t count = 0;
+	int filedsc;
 
-	fileptr = fopen(filename, "r");
+	buff = (char *) malloc((letters + 1) * sizeof(char));
 	if (filename == NULL)
 	{
 		return (0);
 	}
-	if (fileptr == NULL)
+	if (buff == NULL)
 	{
 		return (0);
 	}
-	while (i < letters)
+	filedsc = open(filename, O_RDONLY);
+	if (filedsc == -1)
 	{
-		c = fgetc(fileptr);
-		if (feof(fileptr))
-		{
-			break;
-		}
-		_putchar(c);
-		i++;
+		return (0);
 	}
-	fclose(fileptr);
+	i = read(filedsc, buff, letters);
+	if (i == -1)
+	{
+		free(buff);
+		close(filedsc);
+		return (0);
+	}
+	while (count < i)
+	{
+		_putchar(buff[count]);
+		count++;
+	}
+	close(filedsc);
 	return (i);
 }
