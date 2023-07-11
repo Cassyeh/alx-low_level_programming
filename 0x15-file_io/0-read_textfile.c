@@ -1,18 +1,4 @@
 #include "main.h"
-#include <unistd.h>
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
 
 /**
  * read_textfile - function that reads a text file and prints it
@@ -25,7 +11,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buff;
 	ssize_t i;
-	ssize_t count = 0;
+	ssize_t count;
 	int filedsc;
 
 	buff = (char *) malloc((letters + 1) * sizeof(char));
@@ -34,12 +20,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	if (buff == NULL)
-	{
 		return (0);
-	}
 	filedsc = open(filename, O_RDONLY);
 	if (filedsc == -1)
 	{
+		free(buff);
 		return (0);
 	}
 	i = read(filedsc, buff, letters);
@@ -49,10 +34,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(filedsc);
 		return (0);
 	}
-	while (count < i)
+	count = write(1, buff, i);
+	if (count = -1)
 	{
-		_putchar(buff[count]);
-		count++;
+		free(buff);
+		close(filedsc);
+		return (0);
 	}
 	close(filedsc);
 	return (i);
