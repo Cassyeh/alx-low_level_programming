@@ -35,7 +35,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	count = write(1, buff, i);
-	if (count = -1)
+	if (count == -1)
 	{
 		free(buff);
 		close(filedsc);
